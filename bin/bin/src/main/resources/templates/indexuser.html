@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+	
+	<div class="container main-content list">
+	<h3>USER</h3>
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+		<div class="row">
+			<a th:href="@{/user/create}" class="btn btn-success pull-left">
+				<span class="glyphicon glyphicon-plus"></span> Them User
+			</a>
+			<form class="form-inline pull-right" action="#"
+				th:action="@{/user/search}" method="GET">
+				<div class="form-group">
+					<input type="text" class="form-control" name="s"
+						placeholder="them ten User..." />
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+		<th:block th:if="${#lists.isEmpty(users)}">
+			<h3>Khong co User</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(users)}">
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>TEN</th>
+							<th>NGAY SINH</th>
+							<th>GIOI TINH</th>
+							<th>QUE QUAN</th>
+							<th>SO DIEN THOAI</th>
+							<th>EMAIL</th>
+							<th>TAI KHOAN</th>
+							<th>MAT KHAU</th>
+							<th>ID CATEGORY</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user,iterStat : ${users}">
+							<td th:text="${iterStat.count}"></td>
+							
+							<td th:text="${user.ten}"></td>
+							<td th:text="${user.ngaySinh}"></td>
+							<td th:text="${user.gioiTinh}"></td>
+							<td th:text="${user.queQuan}"></td>
+							<td th:text="${user.soDienThoai}"></td>
+							<td th:text="${user.email}"></td>
+							<td th:text="${user.taiKhoan}"></td>
+							<td th:text="${user.matKhau}"></td>
+							<td th:text="${user.category}"></td>
+							<td><a th:href="@{/user/{id}/edit(id=${user.id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/user/{id}/delete(id=${user.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

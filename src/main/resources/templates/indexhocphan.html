@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+
+	<div class="container main-content list">
+	<h3>HOC PHAN</h3>
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+		<div class="row">
+			<a th:href="@{/hocphan/create}" class="btn btn-success pull-left">
+				<span class="glyphicon glyphicon-plus"></span> Them hoc phan
+			</a>
+			<form class="form-inline pull-right" action="#"
+				th:action="@{/hocphan/search}" method="GET">
+				<div class="form-group">
+					<input type="text" class="form-control" name="s"
+						placeholder="them ma hoc phan..." />
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+		<th:block th:if="${#lists.isEmpty(hocphans)}">
+			<h3>Khong co hocphan nao</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(hocphans)}">
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>MA HOC PHAN</th>
+							<th>TEN HOC PHAN</th>
+							<th>SO TIN CHI</th>
+							<th>SO TIN HOC PHI</th>
+							<th>HE SO</th>
+							<th>ID KHOA VIEN</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="hocphan,iterStat : ${hocphans}">
+							<td th:text="${iterStat.count}"></td>
+							
+							<td th:text="${hocphan.maHocPhan}"></td>
+							<td th:text="${hocphan.tenHocPhan}"></td>
+							<td th:text="${hocphan.soTinChi}"></td>
+							<td th:text="${hocphan.soTinHocPhi}"></td>
+							<td th:text="${hocphan.heSo}"></td>
+							<td th:text="${hocphan.idKhoaVien}"></td>
+							<td><a th:href="@{/hocphan/{id}/edit(id=${hocphan.id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/hocphan/{id}/delete(id=${hocphan.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

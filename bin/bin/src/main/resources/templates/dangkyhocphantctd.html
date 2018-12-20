@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+	<title>Đăng ký học phần TCTD</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<header id="header" class="">
+		<div class="container">
+			<div class="row">
+				<div class="col-1 header--icon">
+					<a href="#" title="">
+						<img th:src="@{/image/home--icon.png}" alt="" class="img-fluid">
+					</a>
+				</div>
+				<div class="col-7 header--banner">
+					<h3>
+						Student Information System
+					</h3>
+					<h5>
+						Hanoi University of Science and Technology
+					</h5>
+				</div>
+				<div class="col-4 header--infor">
+					<form>
+						<div class="header--infor__login">
+							Xin chào <strong>Biện Thành Chung </strong><a href="#" title="">
+								thoát đăng nhập
+							</a></span>
+						</div>
+					</form>
+					<div class="header--infor__time">
+						<div>
+							Học kỳ 20181,tuần thứ 7,ngày 7 tháng 10 năm 2018
+						<div>
+						<div>
+							Chúng ta có 15 khách và 82 thành viên trực tuyến
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header><!-- /header -->
+	<!-- menu ne --> 
+	<div class="menu">
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+      				<li class="nav-item">
+        				<a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+      				</li>
+      				
+      				<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Thông tin người sử dụng
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Chương trình đào tạo
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Kế hoạch học tập
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Kết quả học tập
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Đăng ký học tập
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Đăng ký học phần</a>
+					        <a class="dropdown-item" href="#">Đăng ký học phần TCTD</a>
+					       
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Tra cứu
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Trưng cầu ý kiến
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Hướng dẫn
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+  					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         					Mục riêng
+        				</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					        <a class="dropdown-item" href="#">Action</a>
+					        <a class="dropdown-item" href="#">Another action</a>
+					        <div class="dropdown-divider"></div>
+					        <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+  					</li>
+					
+    			</ul>
+  			</div>
+		</nav>
+		</div>
+	</div>
+	<!-- he phan menu -->
+	
+	<!-- noi dung -->
+	<main>
+		<div class="container">
+		<form th:action="@{/dang-ki-hoc-phan-TCTD}"  method="POST">
+			<div class="row">
+			
+				<div class="col-5">
+					<div class="form-group">
+
+				    <label style="font-size: 16px;float: left;margin-left: 50px; margin-top: 20px">Từ học kỳ:</label>
+				    <select style="float: left; margin-left: 10px; margin-top: 20px; class="form-control" id="exampleFormControlSelect1" name="hocKy" >
+				      <option>20181</option>
+				      <option>20173</option>
+				      <option>20172</option>
+				      <option>20171</option>
+				      <option>20163</option>
+				      <option>20172</option>
+				      <option>20161</option>
+				    </select>
+				    <label style="font-size: 16px;float: left;margin-left: 5px; margin-top: 20px">CT Nhóm ngành CNTT-TT 2-2014
+</label>
+				  </div>
+				</div>		
+			</div>
+			<div class="row">
+			
+				<div class="col-5">
+					<div class="form-group">
+				    <div class="form-group clearfix">
+	  						<label style="font-size: 16px;float: left;margin-left: 50px; margin-top: 30px">Mã HP đăng ký:</label>
+	    					<input  style="width: 100px;height: 30px; float: left; margin-left: 10px;margin-top: 30px" class="form-control" name="maHP" type="text" />
+	    					<label style="font-size: 16px;float: left;margin-left: 5px; margin-top: 30px">Loại HP:</label>
+	    					<button style="width: 100px; height: 30px; float: left;margin-top: 30px; margin-left: 5px; padding: 2px" type="submit" class="btn btn-primary">Đăng ký</button>
+	  					</div>
+				    
+				  </div>
+				</div>		
+			</div>
+			</form>
+		</div>
+	</main>
+
+	<!-- het phan noi dung -->
+
+	<div class="danhsach">
+		<div class="container">
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Mã HP</th>
+		      <th scope="col">Tên lớp</th>
+		      <th scope="col">Loại HP</th>
+		      <th scope="col">Ngày đăng ký</th>
+		      <th scope="col">Kỳ đăng ký</th>
+		      <th scope="col">TT đăng ký</th>
+		      <th scope="col">Thay thế cho môn</th>
+		      <th scope="col">Số TC</th>
+		      <th scope="col">
+		      	<input type="checkbox" name="xoa">
+		      </th>
+		      
+		    </tr>
+
+		  </thead>
+		 <tbody>
+		    <tr th:each="class : ${list}">
+		      <td th:utext="${class.ma_hoc_phan}"></td>
+		      <td th:utext="${class.ten_hoc_phan}"></td>
+		      <td th:utext="${}"></td>
+		      <td th:utext="${}"></td>
+		      <td th:utext="${}"></td>
+		      <td th:utext="${}"></td>
+		      <td th:utext="${}"></td>
+		      <td th:utext="${}"></td>
+		      <td th:utext="${}"></td>
+		    </tr>
+
+		  </tbody>
+		</table>
+		<button style="width: 200px; height: 30px; float: right; padding: 2px" type="submit" >Xóa các HP chọn</button>
+
+		<button style="width: 100px; height: 30px; margin-left: 500px; padding: 2px" type="submit" >Đăng ký</button>
+		</div>
+	</div>
+</body>
+</html>

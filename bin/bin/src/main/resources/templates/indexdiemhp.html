@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+	
+
+	<div class="container main-content list">
+	<h3>DIEM HOC PHAN</h3>
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+		<div class="row">
+			<a th:href="@{/diem/create}" class="btn btn-success pull-left">
+				<span class="glyphicon glyphicon-plus"></span> Them diem
+			</a>
+			<form class="form-inline pull-right" action="#"
+				th:action="@{/diem/search}" method="GET">
+				<div class="form-group">
+					<input type="text" class="form-control" name="s"
+						placeholder="them ten diem..." />
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+		<th:block th:if="${#lists.isEmpty(diems)}">
+			<h3>Khong co diem</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(diems)}">
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>NO</th>
+							<th>ID DIEM</th>
+							<th>MA SINH VIEN</th>
+							<th>MA LOP</th>
+							<th>DIEM QUA TRINH</th>
+							<th>DIEM KET THUC</th>
+							<th>HOC KY</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="diem,iterStat : ${diems}">
+							<td th:text="${iterStat.count}"></td>
+							
+							<td th:text="${diem.idDiem}"></td>
+							<td th:text="${diem.maSinhVien}"></td>
+							<td th:text="${diem.maLop}"></td>
+							<td th:text="${diem.diemQuaTrinh}"></td>
+							<td th:text="${diem.diemKetThuc}"></td>
+							<td th:text="${diem.hocKy}"></td>
+							<td><a th:href="@{/diem/{id}/edit(id=${diem.id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/diem/{id}/delete(id=${diem.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

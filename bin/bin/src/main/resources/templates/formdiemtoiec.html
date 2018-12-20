@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: header"></nav>
+
+    <div class="container main-content form">
+        <div class="row">
+          <form action="#" th:action="@{/diemtoiec/save}" th:object="${diemtoiec}"
+		    method="POST" novalidate="novalidate">
+			<input type="hidden" th:field="*{id}"/>
+			
+
+		    <div class="form-group">
+		        <label>MA SINH VIEN</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{maSinhVien}" /> 
+		    </div>
+		 
+		      <div class="form-group">
+		        <label>DIEM DOC</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{diemDoc}" /> 
+		    </div>
+		      <div class="form-group">
+		        <label>DIEM NGHE</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{diemNghe}" /> 
+		    </div>
+		      <div class="form-group">
+		        <label>NGAY THI</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{ngayThi}" /> 
+		    </div>
+		    
+		    <button type="submit" class="btn btn-primary">Save</button>
+		</form>
+        </div>
+    </div><!-- /.container -->
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

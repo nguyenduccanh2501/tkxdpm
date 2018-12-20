@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: header"></nav>
+
+    <div class="container main-content form">
+        <div class="row">
+          <form action="#" th:action="@{/user/save}" th:object="${user}"
+		    method="POST" novalidate="novalidate">
+		    
+			<input type="hidden" th:field="*{id}" />
+		 
+		    <div class="form-group">
+		        <label>TEN</label> 
+		        <input type="text" class="form-control" 
+		        	th:field="*{ten}" />
+		    </div>
+		    
+		      <div class="form-group">
+		        <label>NGAY SINH</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{ngaySinh}" /> 
+		    </div>
+		    
+		      <div class="form-group">
+		        <label>GIOI TINH</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{gioiTinh}" /> 
+		    </div>
+		    
+		  
+		    <div class="form-group">
+		        <label>QUE QUAN</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{queQuan}" /> 
+		    </div>
+		    
+		      <div class="form-group">
+		        <label>SO DIEN THOAI</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{soDienThoai}" /> 
+		    </div>
+		    
+		    <div class="form-group">
+		        <label>Email</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{email}" /> 
+		    </div>
+		    
+		     <div class="form-group">
+		        <label>TAI KHOAN</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{taiKhoan}" /> 
+		    </div>
+		    
+		     <div class="form-group">
+		        <label>MAT KHAU</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{matKhau}" /> 
+		    </div>
+		    
+		     <div class="form-group">
+		        <label>ID CATEGORY</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{category}" /> 
+		    </div>
+		    
+		    
+		    <button type="submit" class="btn btn-primary">Save</button>
+		</form>
+        </div>
+    </div><!-- /.container -->
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

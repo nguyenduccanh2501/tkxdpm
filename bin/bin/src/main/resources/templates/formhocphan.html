@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: header"></nav>
+
+    <div class="container main-content form">
+        <div class="row">
+          <form action="#" th:action="@{/hocphan/save}" th:object="${hocphan}"
+		    method="POST" novalidate="novalidate">
+		    
+			<input type="hidden" th:field="*{id}" />
+		 
+		    <div class="form-group">
+		        <label>MA HOC PHAN</label> 
+		        <input type="text" class="form-control" 
+		        	th:field="*{maHocPhan}" />
+		    </div>
+		    
+		      <div class="form-group">
+		        <label>TEN HOC PHAN</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{tenHocPhan}" /> 
+		    </div>
+		    
+		      <div class="form-group">
+		        <label>SO TIN CHI</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{soTinChi}" /> 
+		    </div>
+		    
+		  
+		    <div class="form-group">
+		        <label>SO TIN HOC PHI</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{soTinHocPhi}" /> 
+		    </div>
+		    
+		      <div class="form-group">
+		        <label>HE SO</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{heSo}" /> 
+		    </div>
+		    
+		    <div class="form-group">
+		        <label>ID KHOA VIEN</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{idKhoaVien}" /> 
+		    </div>
+		    
+		    
+		    
+		    <button type="submit" class="btn btn-primary">Save</button>
+		</form>
+        </div>
+    </div><!-- /.container -->
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>
